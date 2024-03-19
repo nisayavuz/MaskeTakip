@@ -26,7 +26,7 @@ namespace Business.Concrete
             KPSPublicSoapClient client = new KPSPublicSoapClient(KPSPublicSoapClient.EndpointConfiguration.KPSPublicSoap);
             return client.TCKimlikNoDogrulaAsync( 
                 new TCKimlikNoDogrulaRequest
-                (new TCKimlikNoDogrulaRequestBody(123, "" ,"" ,2000))).Result.Body.TCKimlikNoDogrulaResult;
+                (new TCKimlikNoDogrulaRequestBody(person.NationalIdentity, person.FirstName ,person.LastName ,person.DateOfBirthYear))).Result.Body.TCKimlikNoDogrulaResult;
         }
     }
 }
